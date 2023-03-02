@@ -1,8 +1,13 @@
-package Algorithms;
+package algorithms;
 import java.util.ArrayList;
 import java.util.Iterator;
 
 public class Snake {
+	
+	/*
+	 * Create a function that takes a grid of integers that find the longest snake of numbers.
+	 * An applicable snake is a sequence of numbers where each number is one index right of or below and has a value of +1 or -1 from the previous number.
+	 */
 	
 	static ArrayList<ArrayList<Integer>> snakes = new ArrayList<ArrayList<Integer>>();
 	static ArrayList<Integer> snake;
@@ -86,6 +91,7 @@ public class Snake {
 		}	
 	}
 	
+	
 	public static void continueSnakeB(int[][] grid, int row, int col) {
 		
 		
@@ -130,126 +136,6 @@ public class Snake {
 			snakes.add(snake);
 		}	
 	}
-
-	
-	
-	//////////////////////////
-	
-	/*public static void continueSnakeR(int[][] grid, int row, int col) {
-		
-		if(col == grid[row].length-1 && row+1 == grid.length-1) {
-			if(grid[row+1][col] == grid[row][col] - 1 || grid[row+1][col] == grid[row][col] + 1) {
-				
-				snake.add(grid[row+1][col]);
-			
-				snakes.add(snake);
-			}
-			
-		} else if(row == grid.length-1 && col+1 == grid[row].length-1) {
-			if(grid[row][col+1] == grid[row][col] - 1 || grid[row][col+1] == grid[row][col] + 1) {
-				
-				snake.add(grid[row][col+1]);
-				snakes.add(snake);
-			}
-			
-		} else if(row == grid.length-1 && col == grid[row].length-1) {
-			//snake.add(grid[row][col]);
-			snakes.add(snake);
-			
-		} else if(col+1 != grid[row].length && row+1 != grid.length) {
-			if(grid[row][col+1] == grid[row][col] - 1 || grid[row][col+1] == grid[row][col] + 1) {
-			
-				snake.add(grid[row][col+1]);
-			
-				continueSnakeRT(grid, row, col+1);
-			} else if(grid[row+1][col] == grid[row][col] - 1 || grid[row+1][col] == grid[row][col] + 1) {
-			
-				snake.add(grid[row+1][col]);
-			
-				continueSnakeRT(grid, row+1, col);
-			} else {
-				snakes.add(snake);
-			}
-		} else if(row+1 != grid.length && col+1 != grid[row].length) {
-			if(grid[row+1][col] == grid[row][col] - 1 || grid[row+1][col] == grid[row][col] + 1) {
-			
-				snake.add(grid[row+1][col]);
-			
-				continueSnakeRT(grid, row+1, col);
-			} else if(grid[row][col+1] == grid[row][col] - 1 || grid[row][col+1] == grid[row][col] + 1) {
-			
-				snake.add(grid[row][col+1]);
-			
-				continueSnakeRT(grid, row, col+1);
-			} else {
-				snakes.add(snake);
-			}
-			
-		} 	else {
-			snakes.add(snake);
-		}	
-	}
-	
-	public static void continueSnakeB(int[][] grid, int row, int col) {
-		
-		
-		if(row == grid.length-1 && col+1 == grid[row].length-1) {
-			if(grid[row][col+1] == grid[row][col] - 1 || grid[row][col+1] == grid[row][col] + 1) {
-				
-				snake.add(grid[row][col+1]);
-				snakes.add(snake);
-			} else {
-				snakes.add(snake);
-			}
-			
-		} else if(col == grid[row].length-1 && row+1 == grid.length-1) {
-			if(grid[row+1][col] == grid[row][col] - 1 || grid[row+1][col] == grid[row][col] + 1) {
-				
-				snake.add(grid[row+1][col]);
-			
-				snakes.add(snake);
-			} else {
-				snakes.add(snake);
-			}
-			
-		} else if(row == grid.length-1 && col == grid[row].length-1) {
-			//snake.add(grid[row][col]);
-			snakes.add(snake);
-			
-		}  else if(row+1 != grid.length && col+1 < grid[row].length) {
-			if(grid[row+1][col] == grid[row][col] - 1 || grid[row+1][col] == grid[row][col] + 1) {
-			
-				snake.add(grid[row+1][col]);
-			
-				continueSnakeBT(grid, row+1, col);
-			} else if(grid[row][col+1] == grid[row][col] - 1 || grid[row][col+1] == grid[row][col] + 1) {
-			
-				snake.add(grid[row][col+1]);
-			
-				continueSnakeBT(grid, row, col+1);
-			} else {
-				snakes.add(snake);
-			}
-			
-		} else if(col+1 != grid[row].length && row+1 != grid.length) {
-			if(grid[row][col+1] == grid[row][col] - 1 || grid[row][col+1] == grid[row][col] + 1) {
-			
-				snake.add(grid[row][col+1]);
-			
-				continueSnakeBT(grid, row, col+1);
-			} else if(grid[row+1][col] == grid[row][col] - 1 || grid[row+1][col] == grid[row][col] + 1) {
-			
-				snake.add(grid[row+1][col]);
-			
-				continueSnakeBT(grid, row+1, col);
-			} else {
-				snakes.add(snake);
-			}
-		} else {
-			snakes.add(snake);
-		}	
-	}*/
-	
 	
 	
 	public static void main(String[] args) {
